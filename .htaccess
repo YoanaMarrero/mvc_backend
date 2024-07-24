@@ -1,0 +1,10 @@
+# Bloquear el listado de contenidos del site
+Options All -Indexes
+
+# Indicamos que se pone en marcha el motor de reescritura de URL
+RewriteEngine on
+
+# Patron de nuestras URL
+# RewriteRule ^productos/([a-zA-Z]+)/([a-zA-Z]+)$ tienda.php?productos=$1&categoria=$2
+RewriteRule ^([a-zA-Z]+)$ index.php?ruta=$1
+RewriteRule ^([a-zA-Z]+)/$ index.php?ruta=$1
