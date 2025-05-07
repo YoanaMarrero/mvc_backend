@@ -43,8 +43,8 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id`, `nombre`, `email`, `foto`, `password`, `estado`, `perfil`, `fecha`) VALUES
-(35, 'michell', 'demo@mail.com', '', '$2a$07$asxx54ahjppf45sd87a5auFL5K1.Cmt9ZheoVVuudOi5BCi10qWly', '1', 'administrador', '2024-06-01 23:04:19'),
-(36, 'ever aguirre', 'demo2@mail.com', '487.jpg', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', '1', 'administrador', '2024-06-02 00:05:14');
+(35, 'John Doe', 'jdoe@mail.com', '487.jpg', '$2a$07$asxx54ahjppf45sd87a5auFL5K1.Cmt9ZheoVVuudOi5BCi10qWly', '1', 'administrador', '2025-05-07 10:08:57'),
+(36, 'Jane Doe', 'janedoe@mail.com', '', '$2a$07$asxx54ahjppf45sd87a5auFL5K1.Cmt9ZheoVVuudOi5BCi10qWly', '1', 'administrador', '2025-05-07 10:09:20');
 
 -- --------------------------------------------------------
 
