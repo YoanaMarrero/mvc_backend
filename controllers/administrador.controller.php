@@ -15,24 +15,29 @@ class ControladorAdministrador
                 $valor = $_POST["ingemail"];
 
                 $respuesta = ModeloAdministrador::mdlMostrarAdministrador($tabla, $item, $valor);
-                if ($respuesta["email"] == $_POST["ingemail"] && $respuesta["password"] == $encriptar) {
-                    if ($respuesta["estado"] == 1) {
-                        $_SESSION["validarSesionBackend"] = "ok";
-                        $_SESSION["id"]                   = $respuesta["id"];
-                        $_SESSION["nombre"]               = $respuesta["nombre"];
-                        $_SESSION["foto"]                 = $respuesta["foto"];
-                        $_SESSION["email"]                = $respuesta["email"];
-                        $_SESSION["password"]             = $respuesta["password"];
-                        $_SESSION["perfil"]               = $respuesta["perfil"];
+                if ($respuesta) {
+                    if ($respuesta["email"] == $_POST["ingemail"] && $respuesta["password"] == $encriptar) {
+                        if ($respuesta["estado"] == 1) {
+                            $_SESSION["validarSesionBackend"] = "ok";
+                            $_SESSION["id"]                   = $respuesta["id"];
+                            $_SESSION["nombre"]               = $respuesta["nombre"];
+                            $_SESSION["foto"]                 = $respuesta["foto"];
+                            $_SESSION["email"]                = $respuesta["email"];
+                            $_SESSION["password"]             = $respuesta["password"];
+                            $_SESSION["perfil"]               = $respuesta["perfil"];
 
-                        echo '<script>window.location = "inicio";</script>';
+                            echo '<script>window.location = "inicio";</script>';
+                        } else {
+                            echo '<br>
+                            <div class="alert alert-warning">Este usuario aún no está activado.</div>';
+                        }
                     } else {
                         echo '<br>
-						<div class="alert alert-warning">Este usuario aún no está activado</div>';
+                        <div class="alert alert-danger">Error al ingresar vuelva a intentarlo.</div>';
                     }
                 } else {
                     echo '<br>
-					<div class="alert alert-danger">Error al ingresar vuelva a intentarlo</div>';
+                    <div class="alert alert-danger">Error al ingresar vuelva a intentarlo.</div>';
                 }
             }
         }
